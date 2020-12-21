@@ -17,6 +17,9 @@ namespace RegularExpressionAndPatternsProgram
 
             if (patternsMatching.ValidateEmail()) { Console.WriteLine("Correct Email Format"); }
             else { Console.WriteLine("Email format is wrong"); }
+
+            if (patternsMatching.ValidatePhoneNumber()) { Console.WriteLine("Correct Phone Number Format"); }
+            else { Console.WriteLine("Phone Number format is wrong"); }
         }
     }
 }
