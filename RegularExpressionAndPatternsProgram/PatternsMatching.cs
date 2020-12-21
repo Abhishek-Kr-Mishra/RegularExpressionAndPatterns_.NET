@@ -11,6 +11,7 @@ namespace RegularExpressionAndPatternsProgram
         public static string REGEX_lastName = "^[A-Z][a-zA-Z]{2,}";
         public static string REGEX_EMAIL = @"^[A-Za-z0-9]+([.\-_+][a-zA-Z0-9]+)*@[a-zA-Z0-9]+[.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})*$";
         public static string REGEX_PhoneNumber = "^[+]91[6-9]{1}[0-9]{9}$";
+        public static string REGEX_PASSWORD = "^[a-zA-Z0-9]{8,}$";
 
         public bool ValidateFirstName()
         {
@@ -35,6 +36,12 @@ namespace RegularExpressionAndPatternsProgram
             Console.WriteLine("Enter the Phone Number with +91");
             string phoneNumber = Console.ReadLine(); ;
             return Regex.IsMatch(phoneNumber, REGEX_PhoneNumber);
+        }
+        public bool ValidatePassword()
+        {
+            Console.WriteLine("Enter the Password");
+            string password = Console.ReadLine(); ;
+            return Regex.IsMatch(password, REGEX_PASSWORD);
         }
     }
 }

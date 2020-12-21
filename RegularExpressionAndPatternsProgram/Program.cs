@@ -20,6 +20,9 @@ namespace RegularExpressionAndPatternsProgram
 
             if (patternsMatching.ValidatePhoneNumber()) { Console.WriteLine("Correct Phone Number Format"); }
             else { Console.WriteLine("Phone Number format is wrong"); }
+
+            if (patternsMatching.ValidatePassword()) { Console.WriteLine("Correct Password Format"); }
+            else { Console.WriteLine("Password format is wrong"); }
         }
     }
 }
