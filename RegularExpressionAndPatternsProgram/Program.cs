@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace RegularExpressionAndPatternsProgram
 {
@@ -23,6 +24,8 @@ namespace RegularExpressionAndPatternsProgram
 
             if (patternsMatching.ValidatePassword()) { Console.WriteLine("Correct Password Format"); }
             else { Console.WriteLine("Password format is wrong"); }
+
+            patternsMatching.ValidAndInvalidEmailID();
         }
     }
 }
