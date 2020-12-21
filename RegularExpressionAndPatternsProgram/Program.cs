@@ -12,8 +12,11 @@ namespace RegularExpressionAndPatternsProgram
             if (patternsMatching.ValidateFirstName()){ Console.WriteLine("Correct First Name Format"); }
             else { Console.WriteLine("First Name format is wrong"); }
 
-            if (patternsMatching.ValidateFirstName()) { Console.WriteLine("Correct Last Name Format"); }
+            if (patternsMatching.ValidateLastName()) { Console.WriteLine("Correct Last Name Format"); }
             else { Console.WriteLine("Last Name format is wrong"); }
+
+            if (patternsMatching.ValidateEmail()) { Console.WriteLine("Correct Email Format"); }
+            else { Console.WriteLine("Email format is wrong"); }
         }
     }
 }

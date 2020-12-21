@@ -9,6 +9,7 @@ namespace RegularExpressionAndPatternsProgram
     {
         public static string REGEX_firstName = "^[A-Z][a-zA-Z]{2,}";
         public static string REGEX_lastName = "^[A-Z][a-zA-Z]{2,}";
+        public static string REGEX_EMAIL = @"^[A-Za-z0-9]+([.\-_+][a-zA-Z0-9]+)*@[a-zA-Z0-9]+[.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})*$";
 
         public bool ValidateFirstName()
         {
@@ -21,6 +22,12 @@ namespace RegularExpressionAndPatternsProgram
             Console.WriteLine("Enter the Last Name");
             string lname = Console.ReadLine(); ;
             return Regex.IsMatch(lname, REGEX_lastName);
+        }
+        public bool ValidateEmail()
+        {
+            Console.WriteLine("Enter the Email ID");
+            string email = Console.ReadLine(); ;
+            return Regex.IsMatch(email, REGEX_EMAIL);
         }
     }
 }
