@@ -10,20 +10,20 @@ namespace RegularExpressionAndPatternsProgram
             Console.WriteLine("Welcome To User Registration Regex And Pattern Matching");
             PatternsMatching patternsMatching = new PatternsMatching();
 
-            if (patternsMatching.ValidateFirstName()){ Console.WriteLine("Correct First Name Format"); }
-            else { Console.WriteLine("First Name format is wrong"); }
+            if (patternsMatching.ValidateFirstName("Abhishek")){ Console.WriteLine("Valid First Name"); }
+            else { Console.WriteLine("Invalid First Name"); }
 
-            if (patternsMatching.ValidateLastName()) { Console.WriteLine("Correct Last Name Format"); }
-            else { Console.WriteLine("Last Name format is wrong"); }
+            if (patternsMatching.ValidateLastName("Mishra")) { Console.WriteLine("Valid Last Name"); }
+            else { Console.WriteLine("Invalid Last Name"); }
 
-            if (patternsMatching.ValidateEmail()) { Console.WriteLine("Correct Email Format"); }
-            else { Console.WriteLine("Email format is wrong"); }
+            if (patternsMatching.ValidateEmail("abh224272@gmail.com")) { Console.WriteLine("Valid Email ID"); }
+            else { Console.WriteLine("Invalid Email ID"); }
 
-            if (patternsMatching.ValidatePhoneNumber()) { Console.WriteLine("Correct Phone Number Format"); }
-            else { Console.WriteLine("Phone Number format is wrong"); }
+            if (patternsMatching.ValidatePhoneNumber("+917559171697")) { Console.WriteLine("Valid Phone Number"); }
+            else { Console.WriteLine("Invalid Phone Number"); }
 
-            if (patternsMatching.ValidatePassword()) { Console.WriteLine("Correct Password Format"); }
-            else { Console.WriteLine("Password format is wrong"); }
+            if (patternsMatching.ValidatePassword("abhhishekMishra@321")) { Console.WriteLine("Valid Password"); }
+            else { Console.WriteLine("Invalid Password"); }
 
             patternsMatching.ValidAndInvalidEmailID();
         }
