@@ -15,23 +15,63 @@ namespace RegularExpressionAndPatternsProgram
 
         public bool ValidateFirstName(string fname)
         {
-            return Regex.IsMatch(fname, REGEX_firstName);
+            bool matchValue =  Regex.IsMatch(fname, REGEX_firstName);
+            if (matchValue == false)
+            {
+                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid First Name");
+            }
+            else
+            {
+                return matchValue;
+            }
         }
         public bool ValidateLastName(string lname)
         {
-            return Regex.IsMatch(lname, REGEX_lastName);
+            bool matchValue = Regex.IsMatch(lname, REGEX_lastName);
+            if (matchValue == false)
+            {
+                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Last Name");
+            }
+            else
+            {
+                return matchValue;
+            }
         }
         public bool ValidateEmail(string email)
         {
-            return Regex.IsMatch(email, REGEX_EMAIL);
+            bool matchValue =  Regex.IsMatch(email, REGEX_EMAIL);
+            if (matchValue == false)
+            {
+                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Email ID");
+            }
+            else
+            {
+                return matchValue;
+            }
         }
         public bool ValidatePhoneNumber(string phoneNumber)
         {
-            return Regex.IsMatch(phoneNumber, REGEX_PhoneNumber);
+            bool matchValue =  Regex.IsMatch(phoneNumber, REGEX_PhoneNumber);
+            if (matchValue == false)
+            {
+                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Phone Number");
+            }
+            else
+            {
+                return matchValue;
+            }
         }
         public bool ValidatePassword(string password)
         {
-            return Regex.IsMatch(password, REGEX_PASSWORD);
+            bool matchValue = Regex.IsMatch(password, REGEX_PASSWORD);
+            if (matchValue == false)
+            {
+                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Password");
+            }
+            else
+            {
+                return matchValue;
+            }
         }
 
         public void ValidAndInvalidEmailID()
