@@ -29,19 +29,6 @@ namespace RegularExpressionAndPatternsProgram
         public Func<string, string> ValidatePasswordByUsingLambda = x => Regex.IsMatch(x, REGEX_PASSWORD) ? "Password is Valid" :
         throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Password");
 
-        //public bool ValidatePassword(string password)
-        //{
-        //    bool matchValue = Regex.IsMatch(password, REGEX_PASSWORD);
-        //    if (matchValue == false)
-        //    {
-        //        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Password");
-        //    }
-        //    else
-        //    {
-        //        return matchValue;
-        //    }
-        //}
-
         public void ValidAndInvalidEmailID()
         {
             string[] validEmails = { "1.abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com",
