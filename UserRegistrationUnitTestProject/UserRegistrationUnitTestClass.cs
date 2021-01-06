@@ -13,7 +13,7 @@ namespace UserRegistrationUnitTestProject
         {
             try
             {
-                Assert.AreEqual(true, patternsMatching.ValidateFirstName("abh"));
+                Assert.AreEqual("First Name is Valid", patternsMatching.ValidateFirstNameByUsingLambda("Abhishek"));
             }
             catch(RegularExpressionCustomException rec)
             {
@@ -25,7 +25,7 @@ namespace UserRegistrationUnitTestProject
         {
             try
             {
-                Assert.AreEqual(true, patternsMatching.ValidateLastName("Mishra"));
+                Assert.AreEqual("Last Name is Valid", patternsMatching.ValidateLastNameByUsingLambda("Mishra"));
             }
             catch (RegularExpressionCustomException rec)
             {
@@ -37,7 +37,7 @@ namespace UserRegistrationUnitTestProject
         {
             try
             {
-                Assert.AreEqual(true, patternsMatching.ValidateEmail("abh224272@gmail.com"));
+                Assert.AreEqual("Email ID is Valid", patternsMatching.ValidateEmailByUsingLambda("abh224272@gmail.com"));
             }
             catch (RegularExpressionCustomException rec)
             {
@@ -49,7 +49,7 @@ namespace UserRegistrationUnitTestProject
         {
             try
             {
-                Assert.AreEqual(true, patternsMatching.ValidatePassword("abhishekMishrA@124"));
+                Assert.AreEqual("Password is Valid", patternsMatching.ValidatePasswordByUsingLambda("abhishekMishrA@124"));
             }
             catch (RegularExpressionCustomException rec) 
             {
@@ -61,7 +61,7 @@ namespace UserRegistrationUnitTestProject
         {
             try
             {
-                Assert.AreEqual(true, patternsMatching.ValidatePhoneNumber("+917559171697"));
+                Assert.AreEqual("Phone Number is Valid", patternsMatching.ValidatePhoneNumberByUsingLambda("+917559171697"));
             }
             catch (RegularExpressionCustomException rec) 
             { 
@@ -78,7 +78,7 @@ namespace UserRegistrationUnitTestProject
         [DataTestMethod]
         public void GivenMultipleEntryOfEmailAddress_WhenValidate_ShouldReturnTrue(string email)
         {
-            Assert.AreEqual(true, patternsMatching.ValidateEmail(email));
+            Assert.AreEqual(true, patternsMatching.ValidateEmailByUsingLambda(email));
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace RegularExpressionAndPatternsProgram
 {
@@ -13,66 +14,33 @@ namespace RegularExpressionAndPatternsProgram
         public static string REGEX_PhoneNumber = "^[+]91[6-9]{1}[0-9]{9}$";
         public static string REGEX_PASSWORD = "^(?=.{8,}$)(?=.*?[0-9])(?=.*[A-Z])[a-zA-Z0-9]*[#!@$^&-][a-zA-Z0-9]*$";
 
-        public bool ValidateFirstName(string fname)
-        {
-            bool matchValue =  Regex.IsMatch(fname, REGEX_firstName);
-            if (matchValue == false)
-            {
-                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid First Name");
-            }
-            else
-            {
-                return matchValue;
-            }
-        }
-        public bool ValidateLastName(string lname)
-        {
-            bool matchValue = Regex.IsMatch(lname, REGEX_lastName);
-            if (matchValue == false)
-            {
-                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Last Name");
-            }
-            else
-            {
-                return matchValue;
-            }
-        }
-        public bool ValidateEmail(string email)
-        {
-            bool matchValue =  Regex.IsMatch(email, REGEX_EMAIL);
-            if (matchValue == false)
-            {
-                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Email ID");
-            }
-            else
-            {
-                return matchValue;
-            }
-        }
-        public bool ValidatePhoneNumber(string phoneNumber)
-        {
-            bool matchValue =  Regex.IsMatch(phoneNumber, REGEX_PhoneNumber);
-            if (matchValue == false)
-            {
-                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Phone Number");
-            }
-            else
-            {
-                return matchValue;
-            }
-        }
-        public bool ValidatePassword(string password)
-        {
-            bool matchValue = Regex.IsMatch(password, REGEX_PASSWORD);
-            if (matchValue == false)
-            {
-                throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Password");
-            }
-            else
-            {
-                return matchValue;
-            }
-        }
+        public Func<string, string> ValidateFirstNameByUsingLambda = x => Regex.IsMatch(x, REGEX_firstName) ? "First Name is Valid" :
+        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid First Name");
+
+        public Func<string, string> ValidateLastNameByUsingLambda = x => Regex.IsMatch(x, REGEX_lastName) ? "Last Name is Valid" :
+        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Last Name");
+
+        public Func<string, string> ValidateEmailByUsingLambda = x => Regex.IsMatch(x, REGEX_EMAIL) ? "Email ID is Valid" :
+        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Email ID");
+
+        public Func<string, string> ValidatePhoneNumberByUsingLambda = x => Regex.IsMatch(x, REGEX_PhoneNumber) ? "Phone Number is Valid" :
+        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Phone Number");
+
+        public Func<string, string> ValidatePasswordByUsingLambda = x => Regex.IsMatch(x, REGEX_PASSWORD) ? "Password is Valid" :
+        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Password");
+
+        //public bool ValidatePassword(string password)
+        //{
+        //    bool matchValue = Regex.IsMatch(password, REGEX_PASSWORD);
+        //    if (matchValue == false)
+        //    {
+        //        throw new RegularExpressionCustomException(RegularExpressionCustomException.ExceptionType.INVALID_VALUE, "Invalid Password");
+        //    }
+        //    else
+        //    {
+        //        return matchValue;
+        //    }
+        //}
 
         public void ValidAndInvalidEmailID()
         {

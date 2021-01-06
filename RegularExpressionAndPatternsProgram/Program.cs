@@ -10,20 +10,20 @@ namespace RegularExpressionAndPatternsProgram
             Console.WriteLine("Welcome To User Registration Regex And Pattern Matching");
             PatternsMatching patternsMatching = new PatternsMatching();
 
-            if (patternsMatching.ValidateFirstName("Abhishek")){ Console.WriteLine("Valid First Name"); }
-            else { Console.WriteLine("Invalid First Name"); }
+            string firstNameOutput = patternsMatching.ValidateFirstNameByUsingLambda("Abhishek");
+            Console.WriteLine(firstNameOutput);
 
-            if (patternsMatching.ValidateLastName("Mishra")) { Console.WriteLine("Valid Last Name"); }
-            else { Console.WriteLine("Invalid Last Name"); }
+            string lastNameOutput = patternsMatching.ValidateLastNameByUsingLambda("Mishra");
+            Console.WriteLine(lastNameOutput);
 
-            if (patternsMatching.ValidateEmail("abh224272@gmail.com")) { Console.WriteLine("Valid Email ID"); }
-            else { Console.WriteLine("Invalid Email ID"); }
+            string emailIdOutput = patternsMatching.ValidateEmailByUsingLambda("abh224272@gmail.com");
+            Console.WriteLine(emailIdOutput);
 
-            if (patternsMatching.ValidatePhoneNumber("+917559171697")) { Console.WriteLine("Valid Phone Number"); }
-            else { Console.WriteLine("Invalid Phone Number"); }
+            string passwordOutput = patternsMatching.ValidatePasswordByUsingLambda("abhhishekMishra@123");
+            Console.WriteLine(passwordOutput);
 
-            if (patternsMatching.ValidatePassword("abhhishekMishra@321")) { Console.WriteLine("Valid Password"); }
-            else { Console.WriteLine("Invalid Password"); }
+            string phoneNumberOutput = patternsMatching.ValidatePhoneNumberByUsingLambda("+917559171697");
+            Console.WriteLine(phoneNumberOutput);
 
             patternsMatching.ValidAndInvalidEmailID();
         }
